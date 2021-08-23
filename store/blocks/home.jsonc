@@ -2,66 +2,88 @@
   "store.home": {
     "blocks": [
       "vtex.menu@2.x:menu#websites",
-      "slider-layout#home"
+      "slider-layout#home",
+      "search-result-layout.customQuery#home"
+    ]
+  },
+  "search-result-layout.customQuery#home": {
+    "props": {
+      "querySchema": {
+        "skusFilter": "FIRST_AVAILABLE",
+        "simulationBehavior": "skip",
+        "maxItensPerPage": 6
+      }
+    },
+    "blocks": [
+      "search-result-layout.desktop#lp"
+    ]
+  },
+  "search-result-layout.desktop#lp": {
+    "children": [
+      "flex-layout.row#searchbread",
+      "flex-layout.row#searchtitle",
+      "flex-layout.row#result"
+    ],
+    "props": {
+      "preventRouteChange": true
+    }
+  },
+  "flex-layout.row#searchbread": {},
+  "flex-layout.row#searchtitle": {},
+  "flex-layout.row#result": {
+    "children": [
+      "search-content#lp"
+    ]
+  },
+  "search-content#lp": {
+    "blocks": [
+      "gallery",
+      "not-found"
     ]
   },
 
-  "vtex.menu@2.x:menu#websites": {
+  "gallery#lp": {
     "props": {
-      "items": [
+      "layouts": [ //40:16
         {
-          "id": "menu-item-shop",
-          "type": "custom",
-          "iconId": null,
-          "highlight": false,
-          "itemProps": {
-            "type": "internal",
-            "href": "#",
-            "noFollow": false,
-            "tagTitle": "Shop",
-            "text": "Shop"
+          "name": "grid",
+          "component": "GridSummary",
+          "itensPerRow": {
+            "(min-width:1300px)": 2,
+            "desktop": 2,
+            "tablet": 2,
+            "phone": 1
           }
         },
         {
-          "id": "menu-item-about-us",
-          "type": "custom",
-          "iconId": null,
-          "highlight": false,
-          "itemProps": {
-            "type": "internal",
-            "href": "/about-us",
-            "noFollow": false,
-            "tagTitle": "about-us",
-            "text": "About Us"
-          }
-        },
-        {
-          "id": "menu-item-about-us",
-          "type": "custom",
-          "iconId": null,
-          "highlight": false,
-          "itemProps": {
-            "type": "internal",
-            "href": "/about-us",
-            "noFollow": false,
-            "tagTitle": "about-us",
-            "text": "About Us"
-          }
-        },
-        {
-          "id": "menu-item-about-us",
-          "type": "custom",
-          "iconId": null,
-          "highlight": false,
-          "itemProps": {
-            "type": "internal",
-            "href": "/about-us",
-            "noFollow": false,
-            "tagTitle": "about-us",
-            "text": "About Us"
-          }
+          "name": "list",
+          "component": "ListSummary",
+          "itensPerRow": 1
         }
-      ]
+      ],
+      "ListSummary": "product-summary.shelf#lp",
+      "GridSummary": "product-summary.shelf#lp"
+    }
+  },
+  "product-summary.shelf#lp": {
+    "children": [
+      "product-summary-name",
+      "product-summary-description",
+      "product-summary-image",
+      "vtex.product-highlights@2.x:product-highlights",
+      "product-summary-price",
+      "product-summary-sku-selector",
+      "product-summary-buy-button"
+    ]
+  },
+  "vtex.product-highlights@2.x:product-highlights": { //1:11:00
+    "children": [
+      "product-highlight-text"
+    ]
+  },
+  "product-highlight-text": {
+    "props": {
+      "message": "TESTE"
     }
   }
 }

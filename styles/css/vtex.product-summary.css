@@ -1,0 +1,18 @@
+.container{
+    background-color: #424242;
+    display: flex;
+    flex-wrap: wrap;
+}
+.buyButtonText{
+    color: #3C3C3C;
+}
+.price_sellingPriceContainer{
+    color: #59ff00;
+}
+.nameContainer{
+    color: #fffcf9;
+}
+.productNameContainer{
+    color: #fffcf9;
+    margin-left: 15px;
+}

@@ -1,0 +1,60 @@
+{ 
+    "vtex.menu@2.x:menu#websites": {
+    "props": {
+      "items": [
+        {
+          "id": "menu-item-comprar",
+          "type": "custom",
+          "iconId": null,
+          "highlight": false,
+          "itemProps": {
+            "type": "internal",
+            "href": "#",
+            "noFollow": false,
+            "tagTitle": "Comprar",
+            "text": "COMPRAR"
+          }
+        },
+        {
+          "id": "menu-item-promocao",
+          "type": "custom",
+          "iconId": null,
+          "highlight": false,
+          "itemProps": {
+            "type": "internal",
+            "href": "/about-us",
+            "noFollow": false,
+            "tagTitle": "Promocao",
+            "text": "PROMOÇÃO"
+          }
+        },
+        {
+          "id": "menu-item-divertidos",
+          "type": "custom",
+          "iconId": null,
+          "highlight": false,
+          "itemProps": {
+            "type": "internal",
+            "href": "/about-us",
+            "noFollow": false,
+            "tagTitle": "divertidos",
+            "text": "DIVERTIDOS"
+          }
+        },
+        {
+          "id": "menu-item-album",
+          "type": "custom",
+          "iconId": null,
+          "highlight": false,
+          "itemProps": {
+            "type": "internal",
+            "href": "/about-us",
+            "noFollow": false,
+            "tagTitle": "album",
+            "text": "ÁLBUM"
+          }
+        }
+      ]
+    }
+  }
+}
